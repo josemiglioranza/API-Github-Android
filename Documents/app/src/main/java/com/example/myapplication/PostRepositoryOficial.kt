@@ -4,18 +4,20 @@ import com.google.gson.annotations.SerializedName
 
 class PostRepositoryOficial {
 
-    data class PostsRepoOfi(
+    data class Repository(
+        @SerializedName("name") val name: String,
+        @SerializedName("forks_count") val numberOfForks: Long,
+        @SerializedName("stargazers_count") val numberOfWatchers: Long,
+        @SerializedName("owner") val owner: Person,
+        @SerializedName("description") val descricao: String
+    )
 
-        @SerializedName("name")
-        var name : String,
+    data class PostRepository(
+        @SerializedName("items") val items: List<Repository>
+    )
 
-        @SerializedName("full_name")
-        var full_name : String,
-
-        @SerializedName("login")
-        var login : String,
-
-        @SerializedName("description")
-        var description : String
+    data class Person(
+        @SerializedName("login") val name: String,
+        @SerializedName("avatar_url") val photoPath: String
     )
 }

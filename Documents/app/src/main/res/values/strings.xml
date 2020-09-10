@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="repository_name">Aqui vai vir o nome do repositório</string>
+    <string name="watchers">WATCHERS:</string>
+    <string name="forks">FORKS:</string>
+    <string name="owner">Owner</string>
 </resources>

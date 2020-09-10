@@ -8,14 +8,14 @@ import retrofit2.create
 class Connection private constructor() {
 
     companion object {
-        private val baseUrl = "https://api.github.com/" //Url que vai servir como header do endpoint
+        private val baseUrl = "https://api.github.com/"
 
         private fun getRetrofitInstance(): Retrofit {
-            val httpClient = OkHttpClient.Builder() //Classe que gerencia com chamadas http, que vai connetar com a internet
+            val httpClient = OkHttpClient.Builder()
             return Retrofit.Builder()
                 .baseUrl(baseUrl) //
                 .client(httpClient.build())
-                .addConverterFactory(GsonConverterFactory.create()) //Converter o JSON em classes
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
 

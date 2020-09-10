@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        android:layout_margin="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary"
+        tools:context=".TesteCardV"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardPreventCornerOverlap="false">
+
+
+    <!--SingleLine e Ellipsize-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            >
+
+        <TextView
+                android:id="@+id/texto_nome"
+                android:textSize="25dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:textStyle="bold"
+                android:text="Projeto DONARE"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="20dp"/>
+        
+        <TextView 
+                android:id="@+id/texto_fork"
+                android:layout_width="wrap_content" 
+                android:layout_height="20dp"
+                android:text="@string/forks"
+                app:layout_constraintLeft_toLeftOf="@+id/texto_nome"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="10dp"/>
+        
+        <TextView
+                android:id="@+id/text_watchers"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/watchers"
+                app:layout_constraintStart_toEndOf="@+id/texto_fork"
+                app:layout_constraintTop_toTopOf="@+id/texto_fork"
+                android:layout_marginStart="50dp"/>
+
+        <ImageView
+                android:id="@+id/shape_rosa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_circular"
+                app:layout_constraintStart_toEndOf="@+id/texto_nome"
+                app:layout_constraintTop_toTopOf="@+id/texto_nome"
+
+                android:layout_marginStart="26dp"/>
+
+        <TextView
+                android:id="@+id/owner"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/owner"
+                app:layout_constraintTop_toBottomOf="@+id/shape_rosa"
+                app:layout_constraintStart_toStartOf="@+id/shape_rosa"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"/>
+
+        <TextView
+                android:id="@+id/descricao"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:ellipsize="end"
+                android:text="Aqui vai a descrição do repositório"
+                app:layout_constraintStart_toStartOf="@+id/texto_nome"
+                app:layout_constraintTop_toBottomOf="@+id/texto_nome"
+                />
+
+        <TextView
+                android:id="@+id/numero_forks"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:text="123"
+                app:layout_constraintStart_toEndOf="@+id/texto_fork"
+                app:layout_constraintBottom_toBottomOf="@+id/texto_fork"/>
+
+        <TextView
+                android:id="@+id/numero_watcher"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:text="1234"
+                app:layout_constraintStart_toEndOf="@+id/text_watchers"
+                app:layout_constraintBottom_toBottomOf="@id/text_watchers"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
