@@ -12,5 +12,5 @@ interface PostRepoOficial {
         @Query("q") language : String = "language:Java",
         @Query("sort") sort: String = "stars",
         @Query("page") page: Int? = 1
-    ): Call<PostRepositoryOficial.PostRepository>
+    ): Call<PostRepositoryOficial.Repository>
 }
