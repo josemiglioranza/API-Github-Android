@@ -18,28 +18,24 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: Adapter
-//    private lateinit var recyclerView: RecyclerView
-//    private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        viewManager = LinearLayoutManager(this)
-
         val remote3 = Connection.createService(PostRepoOficial::class.java)
-        val call3: Call<PostRepositoryOficial.Repository> = remote3.list()
+        val call3: Call<List<PostRepositoryOficial.PostRepository>> = remote3.list()
 
-        val response3 = call3.enqueue(object : Callback<PostRepositoryOficial.Repository> {
-            override fun onFailure(call: Call<PostRepositoryOficial.Repository>, t: Throwable) {
+        val response3 = call3.enqueue(object : Callback<List<PostRepositoryOficial.PostRepository>> {
+            override fun onFailure(call: Call<List<PostRepositoryOficial.PostRepository>>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
                 println(t.message)
             }
 
             override fun onResponse(
-                call: Call<PostRepositoryOficial.Repository>,response: Response<PostRepositoryOficial.Repository>) {
+                call: Call<List<PostRepositoryOficial.PostRepository>>,response: Response<List<PostRepositoryOficial.PostRepository>>) {
                 if (response.isSuccessful) {
-                    var repo: PostRepositoryOficial.Repository = response.body()
+                    var repo: List<PostRepositoryOficial.PostRepository> = response.body()!!
                     recycler.layoutManager = LinearLayoutManager(this@MainActivity)
                     adapter = Adapter(repo)
                     recycler.adapter = adapter

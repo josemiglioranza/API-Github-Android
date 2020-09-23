@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class Adapter(private val exampleList: PostRepositoryOficial.Repository): RecyclerView.Adapter<Adapter.ViewHold>() {
+class Adapter(private val exampleList: List<PostRepositoryOficial.PostRepository>): RecyclerView.Adapter<Adapter.ViewHold>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHold {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_teste_card_v,
@@ -16,7 +16,7 @@ class Adapter(private val exampleList: PostRepositoryOficial.Repository): Recycl
     }
 
     override fun onBindViewHolder(holder: ViewHold, position: Int) {
-        val currentItem = exampleList
+        val currentItem = exampleList[position]
         holder.textoNome.text = currentItem.name
         holder.descricao.text = currentItem.descricao
         holder.numeroForks.text = currentItem.numberOfForks.toString()
