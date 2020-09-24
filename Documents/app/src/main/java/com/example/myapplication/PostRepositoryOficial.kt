@@ -18,7 +18,7 @@ class PostRepositoryOficial {
 
     class Person(
         @SerializedName("avatar_url") val photoPath: String,
-        @SerializedName("login") val name: String
+        @SerializedName("login") val owner: String
     )
 
 }

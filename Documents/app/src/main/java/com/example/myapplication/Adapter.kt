@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import java.lang.IndexOutOfBoundsException
 
 
 class Adapter(private val exampleList: PostRepositoryOficial.PostRepository): RecyclerView.Adapter<Adapter.ViewHold>() {
@@ -16,11 +18,16 @@ class Adapter(private val exampleList: PostRepositoryOficial.PostRepository): Re
     }
 
     override fun onBindViewHolder(holder: ViewHold, position: Int) {
-        val currentItem = exampleList.items[position]
-        holder.textoNome.text = currentItem.name
-        holder.descricao.text = currentItem.descricao
-        holder.numeroForks.text = currentItem.numberOfForks.toString()
-        holder.numeroWatchers.text = currentItem.numberOfWatchers.toString()
+        try {
+            val currentItem = exampleList.items[position]
+            holder.textoNome.text = currentItem.name
+            holder.descricao.text = currentItem.descricao
+            holder.numeroForks.text = currentItem.numberOfForks.toString()
+            holder.numeroWatchers.text = currentItem.numberOfWatchers.toString()
+        }catch (exception: IndexOutOfBoundsException) {
+            println("Fim da lista")
+        }
+
     }
 
     override fun getItemCount() = exampleList.hashCode()
