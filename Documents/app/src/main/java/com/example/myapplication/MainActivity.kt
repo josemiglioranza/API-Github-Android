@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                     recycler.layoutManager = LinearLayoutManager(this@MainActivity)
                     adapter = Adapter(repo)
                     recycler.adapter = adapter
-                    Toast.makeText(this@MainActivity, "Isso é um toast", Toast.LENGTH_LONG)
                 }
             }
         })

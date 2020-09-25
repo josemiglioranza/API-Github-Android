@@ -8,7 +8,7 @@
         android:background="@color/colorPrimary"
         tools:context=".TesteCardV"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="5dp"
+        app:cardElevation="2dp"
         app:cardCornerRadius="5dp"
         app:cardPreventCornerOverlap="false">
 
@@ -22,8 +22,8 @@
 
         <TextView
                 android:id="@+id/texto_nome"
-                android:textSize="25dp"
-                android:textColor="@color/colorPrimary"
+                android:textSize="15dp"
+                android:textColor="@color/blue"
                 android:layout_width="150dp"
                 android:layout_height="33dp"
                 android:textStyle="bold"
@@ -40,6 +40,8 @@
                 android:layout_width="wrap_content" 
                 android:layout_height="20dp"
                 android:text="@string/forks"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintLeft_toLeftOf="@+id/texto_nome"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="10dp"/>
@@ -49,7 +51,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="@string/watchers"
-                app:layout_constraintStart_toEndOf="@+id/texto_fork"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/numero_forks"
                 app:layout_constraintTop_toTopOf="@+id/texto_fork"
                 android:layout_marginStart="50dp"/>
 
@@ -58,10 +62,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_circular"
-                app:layout_constraintStart_toEndOf="@+id/texto_nome"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/texto_nome"
-
-                android:layout_marginStart="26dp"/>
+                android:layout_marginStart="210dp"/>
 
         <TextView
                 android:id="@+id/owner_repo"
@@ -76,8 +79,10 @@
         <TextView
                 android:id="@+id/descricao"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_height="73dp"
                 android:ellipsize="end"
+                android:maxLines="5"
+                android:textColor="@color/black"
                 android:text="Aqui vai a descrição do repositório"
                 app:layout_constraintStart_toStartOf="@+id/texto_nome"
                 app:layout_constraintTop_toBottomOf="@+id/texto_nome"
@@ -88,6 +93,7 @@
                 android:layout_width="45dp"
                 android:layout_height="20dp"
                 android:text="123"
+                android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@+id/texto_fork"
                 app:layout_constraintBottom_toBottomOf="@+id/texto_fork"/>
 
@@ -96,6 +102,7 @@
                 android:layout_width="45dp"
                 android:layout_height="20dp"
                 android:text="1234"
+                android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@+id/text_watchers"
                 app:layout_constraintBottom_toBottomOf="@id/text_watchers"/>
 
