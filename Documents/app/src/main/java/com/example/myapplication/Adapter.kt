@@ -18,19 +18,14 @@ class Adapter(private val exampleList: PostRepositoryOficial.PostRepository): Re
     }
 
     override fun onBindViewHolder(holder: ViewHold, position: Int) {
-        try {
             val currentItem = exampleList.items[position]
             holder.textoNome.text = currentItem.name
             holder.descricao.text = currentItem.descricao
             holder.numeroForks.text = currentItem.numberOfForks.toString()
             holder.numeroWatchers.text = currentItem.numberOfWatchers.toString()
-        }catch (exception: IndexOutOfBoundsException) {
-            println("Fim da lista")
-        }
-
     }
 
-    override fun getItemCount() = exampleList.hashCode()
+    override fun getItemCount() = exampleList.items.size
 
     class ViewHold(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textoNome : TextView = itemView.findViewById(R.id.texto_nome)

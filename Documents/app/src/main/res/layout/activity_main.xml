@@ -15,7 +15,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@color/lightWhite"
             tools:listitem="@layout/activity_teste_card_v"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:layout_editor_absoluteX="-58dp"/>
 
     <TextView
             android:id="@+id/textView2"
