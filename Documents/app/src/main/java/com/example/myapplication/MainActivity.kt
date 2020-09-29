@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val remote3 = Connection.createService(PostRepoOficial::class.java)
-        val call3: Call<PostRepositoryOficial.PostRepository> = remote3.list()
+        val call3: Call<PostRepositoryOficial.PostRepository> = remote3.list("java", "stars", 1)
 
         val response3 = call3.enqueue(object : Callback<PostRepositoryOficial.PostRepository> {
             override fun onFailure(call: Call<PostRepositoryOficial.PostRepository>, t: Throwable) {
@@ -34,6 +35,19 @@ class MainActivity : AppCompatActivity() {
                     recycler.layoutManager = LinearLayoutManager(this@MainActivity)
                     adapter = Adapter(repo)
                     recycler.adapter = adapter
+                    recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                            super.onScrolled(recyclerView, dx, dy)
+                            var total = adapter.itemCount
+                            if(total == dy){
+
+                            }
+                        }
+
+                        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                            super.onScrollStateChanged(recyclerView, newState)
+                        }
+                    }
                 }
             }
         })
