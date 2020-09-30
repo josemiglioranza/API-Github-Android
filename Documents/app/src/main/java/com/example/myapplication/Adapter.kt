@@ -14,7 +14,6 @@ class Adapter(private val exampleList: PostRepositoryOficial.PostRepository): Re
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHold {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_teste_card_v,
             parent, false)
-        val vh = ViewHold(itemView)
         return ViewHold(itemView)
     }
 

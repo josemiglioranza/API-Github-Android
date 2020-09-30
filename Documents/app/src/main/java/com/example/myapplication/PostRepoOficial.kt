@@ -7,10 +7,11 @@ import retrofit2.http.Query
 
 interface PostRepoOficial {
 
+    //Aqui eu não preciso deixar chumbado o valor das variáveis
     @GET("/search/repositories")
     fun list(
-        @Query("q") language : String = "language:Java",
-        @Query("sort") sort: String = "stars",
-        @Query("page") page: Int? = 1
+        @Query("q") language : String,
+        @Query("sort") sort: String,
+        @Query("page") page: Int?
     ): Call<PostRepositoryOficial.PostRepository>
 }
